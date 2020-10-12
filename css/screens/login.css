@@ -1,5 +1,5 @@
 .welcome-header {
-    padding-top: 90px;
+    padding-top: 100px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -50,6 +50,7 @@
 }
 #login-form input[type="submit"] {
     background-color: var(--yellow);
+    margin-bottom: 10px;
 }
 #login-form input[type="button"] {
     background-color: rgba(0, 0, 0, 0.1);
