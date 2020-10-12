@@ -29,7 +29,8 @@ body {
 
 .main-screen {
     padding: 0px var(--horizontal-space);
-    margin-bottom: 90px;
+    padding-top: 110px;
+    padding-bottom: 90px;
 }
 
 
