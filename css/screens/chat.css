@@ -44,16 +44,38 @@
     border-radius: 25px;
     margin-bottom: 25px;
 }
+@keyframes appearMessage {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .message-row {
     width: 100%;
     display: flex;
     margin-bottom: 25px;
+    animation: appearMessage 0.2s linear forwards;
+    opacity: 0;
+}
+.message-row:nth-child(3),
+.message-row:nth-child(3) .message-info {
+    animation-delay: 1s;
+}
+.message-row:nth-child(4), 
+.message-row:nth-child(4) .message-info {
+    animation-delay: 2s;
+}
+.message-row:nth-child(5), 
+.message-row:nth-child(5) .message-info {
+    animation-delay: 3s;
 }
 .message-row img {
     width: 50px;
     height: 50px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 40%;
     margin-right: 15px;
 }
 .message__author {
@@ -67,16 +89,31 @@
     border-radius: 15px;
     border-top-left-radius: 0px;
     margin-right: 5px;
+    max-width: 250px;
+    line-height: 22px;
+}
+.message-row:nth-child(5) .message-bubble {
+    font-size: 30px;
 }
 .message__author, .message-time {
     opacity: 0.8;
     font-size: 13px;
 }
+@keyframes appearMessageInfo {
+    from{
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
 .message-info {
     display: flex;
     align-items: flex-end;
+    animation: appearMessageInfo 0.2s linear forwards;
+    transform: scale(0);
+    transform-origin: left top;
 }
-
 .message-row__own {
     justify-content: flex-end;
 }
@@ -89,7 +126,17 @@
 }
 .message-row__own .message-info {
     flex-direction: row-reverse;
+    transform-origin: right top;
 }
+.message__spans {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.message-unread {
+    color: var(--yellow);
+}
+
 .reply {
     position: fixed;
     bottom: 0;
@@ -123,8 +170,8 @@
 .reply__column:last-child > i, 
 .reply__column:last-child button {
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: 3px;
+    top: 3px;
 }
 .reply__column:last-child > i {
     right: 45px;
@@ -133,8 +180,8 @@
 .reply__column button {
     background-color: var(--yellow);
     border: none;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
 }
 .reply__column button i {
@@ -162,3 +209,4 @@
 .reply:focus-within {
     transform: translateY(80px);
 }
+

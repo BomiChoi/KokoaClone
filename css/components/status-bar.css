@@ -1,24 +1,58 @@
 .status-bar {
     display: flex;
     justify-content: center;
-    padding: 5px 3px;
+    padding: 5px;
 }
 
 .status-bar__column {
     width: 33%;
+    display: flex;
+    align-items: center;
 }
 .status-bar__column:first-child span {
     margin-right: 5px;
+}
+.status-bar__column:first-child i {
+    animation: blink 1s linear infinite;
 }
 .status-bar__column:nth-child(2) {
     display: flex;
     justify-content: center;
 }
 .status-bar__column:last-child {
-    display: flex;
     justify-content: flex-end;
-    align-items: center;
+}
+.status-bar__column .fa-battery-full,
+.status-bar__column .fa-battery-three-quarters,
+.status-bar__column .fa-battery-half,
+.status-bar__column .fa-battery-quarter,
+.status-bar__column .fa-battery-empty  {
+    margin: 0px 8px;
 }
 .status-bar__column .fa-battery-full {
-    margin: 0px 5px;
+    color: yellowgreen;
+}
+.status-bar__column .fa-battery-three-quarters {
+    color: yellowgreen;
+}
+.status-bar__column .fa-battery-half {
+    color: var(--yellow);
+}
+.status-bar__column .fa-battery-quarter {
+    color: orange;
+}
+.status-bar__column .fa-battery-empty {
+    color: red;
+    animation: blink 1s linear infinite;
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
