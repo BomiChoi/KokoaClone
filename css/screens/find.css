@@ -1,4 +1,6 @@
-
+.find.icon-row {
+    justify-content: space-between;
+}
 
 .recommended-friends {
     margin: 25px 0;
